@@ -1,0 +1,135 @@
+/* フォント */
+body {
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+}
+
+/* メインコンテンツ用背景色　Bootstrap の bg-dark 相当 */
+.bg-dark-custom {
+  background-color: #212529 !important;
+}
+
+/* サイドバー用背景色　bg-dark より濃いカスタム色 */
+.bg-darker-custom {
+  background-color: #1a1d21 !important;
+}
+
+
+
+/* サイドバーボタン */
+.router-link-button {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+/* ホバー時に色を出す */
+.router-link-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 現在ページにいるときに色を出す */
+/* 下記は現在のページ に該当する RouterLink に Vue Router が自動で付けるクラス */
+.router-link-exact-active {
+  background-color: rgba(255, 255, 255, 0.2); /* ←少し強めの背景色 */
+}
+
+
+
+/* ボタン */
+.custom-btn {
+  width: 200px;  /* 幅を指定 */
+  height: 50px;  /* 高さを指定 */
+  font-size: 16px; /* 文字サイズを指定 */
+  border: 1px solid #f8f9fa; /* 枠線の色を指定 */
+  background-color: transparent; /* 背景色を透明に */
+  color: #f8f9fa; /* 文字色を設定（ライト色） */
+  border-radius: 5px; /* 角を丸める */
+  transition: all 0.3s ease; /* スムーズな遷移を設定 */
+}
+
+/* ボタンホバー時の効果 */
+/* 「:〜」→擬似クラス。特定の状態やイベントでで適用されるクラス */
+.custom-btn:hover {
+  background-color: #f8f9fa; /* ホバー時に背景色を変更 */
+  color: #212529;  /* ホバー時の文字色を変更 */
+}
+
+/* ゴミ箱ボタン */
+.btn-trash{
+  background-color: #343a40;
+  border: none;
+  color: white;
+}
+
+/* ゴミ箱ボタン_背景色濃い目用 */
+.btn-trash-dark{
+  background-color: #212529;
+  border: none;
+  color: white;
+}
+
+
+
+/* テーブル */
+.custom-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.custom-table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.custom-table tbody {
+  background-color: #343a40; /* 背景色を追加 */
+  color: white; /* tbodyのテキスト色を白にする */
+}
+
+
+
+
+/* カード */
+.custom-card{
+  background-color: #343a40; /* 種目ごとの背景色 */
+  border: 1px solid #ddd;    /* 境界線 */
+  padding: 15px;               /* 内部余白 */
+  border-radius: 5px;          /* 角を丸くする */
+}
+
+/* カードレイアウト */
+/* .custom-card-layout{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+} */
+
+/* ラベルフィールド */
+.label-field{
+  width: 100px;
+  margin-right: 10px;
+}
+
+.label-field-ml {
+  margin-left: 20px; /* 必要に応じて調整 */
+}
+
+/* 入力フィールド */
+.input-field{
+  width: 80px !important;
+  height: 25px !important;
+}
