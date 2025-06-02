@@ -16,6 +16,7 @@ CORS(app, supports_credentials=True, origins=['http://localhost:5173'])
 # SQLiteデータベースの設定、ログインユーザのセッション管理を有効にするためにシークレットキーを設定
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+# app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:////mnt/data/{os.environ.get('DATABASE_NAME', 'your-database.db')}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY']='mysecretkey'
 # Vue + Flask のような異なるポート間（localhost:5173 → localhost:5000）の通信はクロスサイト（クロスオリジン）
