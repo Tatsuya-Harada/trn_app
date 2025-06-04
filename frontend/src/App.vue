@@ -10,7 +10,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 // ログアウト
 const logout = async () => {
-  const response = await fetch('${apiUrl}/logout', {
+  const response = await fetch(`${apiUrl}/logout`, {
     method: 'POST',
     credentials: 'include', 
   });

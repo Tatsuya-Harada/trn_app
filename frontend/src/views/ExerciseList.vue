@@ -9,7 +9,7 @@ const showModal = ref(false); // モーダルの表示状態を管理する変�
 //種目削除
 const deleteRecord = async (exercise_id:number) => {
 
-    const url = new URL('${apiUrl}/exercise');
+    const url = new URL(`${apiUrl}/exercise`);
     if (exercise_id) {
       url.searchParams.append('exercise_id', String(exercise_id));
     }

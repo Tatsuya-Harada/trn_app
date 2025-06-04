@@ -14,7 +14,7 @@ const form = ref<UserInformation>({
 
 // ログイン情報を送信する非同期関数
 const submitRecord = async () => {
-  const response = await fetch('${apiUrl}/login', {
+  const response = await fetch(`${apiUrl}/login`, {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },

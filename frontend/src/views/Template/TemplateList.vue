@@ -10,7 +10,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 // テンプレート一覧取得
 const fetchTemplate = async () => {    
-  const response = await fetch('${apiUrl}/template',{
+  const response = await fetch(`${apiUrl}/template`,{
     credentials: 'include',
   });
 

@@ -100,7 +100,7 @@ const submitRecord = async () => {
     detail.volume = calculateVolume(detail);
   });
 
-  const response = await fetch('${apiUrl}/records', {
+  const response = await fetch(`${apiUrl}/records`, {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },

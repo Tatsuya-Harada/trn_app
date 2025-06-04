@@ -75,7 +75,7 @@ const addExercise = () => {
 // TRNテンプレート保存
 const submitRecord = async () => {
 
-  const response = await fetch('${apiUrl}/template', {
+  const response = await fetch(`${apiUrl}/template`, {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
