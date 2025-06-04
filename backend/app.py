@@ -11,12 +11,18 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 # ログイン機能追加に伴いcookieをフロントから送るにあたりCORS制約回避のためにsupports_credentialsを追加
-CORS(app, supports_credentials=True, origins=['http://localhost:5173'])
+# CORS(app, supports_credentials=True, origins=['http://localhost:5173'])
+CORS(app, supports_credentials=True)
 
 # SQLiteデータベースの設定、ログインユーザのセッション管理を有効にするためにシークレットキーを設定
 basedir = os.path.abspath(os.path.dirname(__file__))
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
-app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:////mnt/data/{os.environ.get('DATABASE_NAME', 'your-database.db')}"
+
+# 環境変数によってデータベースの接続先を切り替える
+if os.environ.get('FLASK_ENV') == 'production':  # 本番環境の場合
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:////mnt/data/{os.environ.get('DATABASE_NAME', 'your-database.db')}"
+else:  # 開発環境の場合
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(basedir, 'data.sqlite')}"
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY']='mysecretkey'
 # Vue + Flask のような異なるポート間（localhost:5173 → localhost:5000）の通信はクロスサイト（クロスオリジン）

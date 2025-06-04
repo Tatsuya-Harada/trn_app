@@ -9,6 +9,7 @@ ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale
 const mainStore = useMainStore();
 const chartData = ref<any[]>([]); //グラフデータ
 //const settings = ref<GraphSetting[]>([]) //グラフ設定データ
+const apiUrl = import.meta.env.VITE_API_URL; 
 
 // 空のグラフデータ
 const emptyChartData = {
@@ -115,7 +116,9 @@ const forceRerender = () => {
 const fetchData = async (chart_datum_id:number,exercise_id?: number) => {
   isDataReady.value = false;
 
-  const url = new URL('http://127.0.0.1:5000/api/records');
+  // const url = new URL('http://127.0.0.1:5000/api/records');
+  const url = new URL(`${apiUrl}/records`);
+
   if (exercise_id) {
     url.searchParams.append('exercise_id', String(exercise_id)); //exercise_idは文字列として扱われるためBEで数値に戻す
   }
