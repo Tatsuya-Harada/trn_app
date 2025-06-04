@@ -405,7 +405,6 @@ with app.app_context():
         
     ]
 
-
     db.session.add_all(record_detail)
     db.session.commit() 
 
@@ -425,7 +424,6 @@ with app.app_context():
         TemplateDetail(template_id=template[0].id, exercise_id=exercises[56], weight=62, goal_reps=15, goal_sets=3),
         TemplateDetail(template_id=template[0].id, exercise_id=exercises[7], weight=100, goal_reps=15, goal_sets=3),
         TemplateDetail(template_id=template[0].id, exercise_id=exercises[20], weight=39, goal_reps=15, goal_sets=3),
-
         TemplateDetail(template_id=template[1].id, exercise_id=exercises[48], weight=72, goal_reps=6, goal_sets=5),
         TemplateDetail(template_id=template[1].id, exercise_id=exercises[44], weight=91, goal_reps=6, goal_sets=5),
         TemplateDetail(template_id=template[1].id, exercise_id=exercises[56], weight=95, goal_reps=6, goal_sets=4)
