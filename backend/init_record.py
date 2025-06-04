@@ -150,261 +150,6 @@ with app.app_context():
     db.session.add_all(record)
     db.session.commit()
 
-    # # レコード詳細
-    # record_detail = [
-    #     # 2023/1/11 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[0].id, exercise_id=49, weight=78, volume=1716),
-    #     # 2023/1/11 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[0].id, exercise_id=53, weight=57, volume=1311),
-    #     # 2023/1/11 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[0].id, exercise_id=11, weight=110, volume=2310),
-    #     # 2023/1/14 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[1].id, exercise_id=53, weight=52, volume=1664),
-    #     # 2023/1/14 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[1].id, exercise_id=49, weight=71, volume=1988),
-    #     # 2023/1/24 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[2].id, exercise_id=49, weight=78, volume=1560),
-    #     # 2023/1/24 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[2].id, exercise_id=53, weight=57, volume=1368),
-    #     # 2023/1/24 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[2].id, exercise_id=11, weight=110, volume=2530),
-    #     # 2023/1/27 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[3].id, exercise_id=53, weight=52, volume=1768),
-    #     # 2023/1/27 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[3].id, exercise_id=49, weight=71, volume=2130),
-    #     # 2023/1/27 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[3].id, exercise_id=11, weight=100, volume=3200),
-    #     # 2023/2/9 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[4].id, exercise_id=53, weight=57, volume=1368),
-    #     # 2023/2/9 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[4].id, exercise_id=49, weight=78, volume=1638),
-    #     # 2023/2/14 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[5].id, exercise_id=53, weight=52, volume=1768),
-    #     # 2023/2/14 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[5].id, exercise_id=49, weight=71, volume=2130),
-    #     # 2023/2/17 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[6].id, exercise_id=11, weight=100, volume=3400),
-    #     # 2023/2/24 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[7].id, exercise_id=53, weight=62, volume=1178),
-    #     # 2023/2/24 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[7].id, exercise_id=49, weight=78, volume=1872),
-    #     # 2023/2/27 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[8].id, exercise_id=53, weight=52, volume=1820),
-    #     # 2023/2/27 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[8].id, exercise_id=49, weight=71, volume=2201),
-    #     # 2023/2/27 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[8].id, exercise_id=11, weight=100, volume=3300),
-    #     # 2023/3/7 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[9].id, exercise_id=53, weight=47, volume=1363),
-    #     # 2023/3/9 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[10].id, exercise_id=53, weight=62, volume=1240),
-    #     # 2023/3/9 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[10].id, exercise_id=49, weight=80.5, volume=1529.5),
-    #     # 2023/3/13 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[11].id, exercise_id=53, weight=57, volume=1596),
-    #     # 2023/3/13 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[11].id, exercise_id=49, weight=73.5, volume=1984.5),
-    #     # 2023/3/13 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[11].id, exercise_id=11, weight=100, volume=3400),
-    #     # 2023/3/28 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[12].id, exercise_id=49, weight=80.5, volume=1610),
-    #     # 2023/3/28 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[12].id, exercise_id=53, weight=62, volume=1302),
-    #     # 2023/3/28 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[12].id, exercise_id=11, weight=110, volume=2640),
-    #     # 2023/4/4 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[13].id, exercise_id=53, weight=57, volume=1539),
-    #     # 2023/4/14 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[14].id, exercise_id=11, weight=115, volume=2530),
-    #     # 2023/4/14 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[14].id, exercise_id=53, weight=62, volume=1364),
-    #     # 2023/4/18 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[15].id, exercise_id=53, weight=57, volume=1425),
-    #     # 2023/4/28 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[16].id, exercise_id=11, weight=115, volume=2645),
-    #     # 2023/4/28 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[16].id, exercise_id=49, weight=80.5, volume=1610),
-    #     # 2023/5/13 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[17].id, exercise_id=49, weight=80.5, volume=1771),
-    #     # 2023/5/13 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[17].id, exercise_id=11, weight=120, volume=2160),
-    #     # 2023/5/18 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[18].id, exercise_id=11, weight=105, volume=3045),
-    #     # 2023/5/18 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[18].id, exercise_id=49, weight=73.5, volume=2058),
-    #     # 2023/5/30 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[19].id, exercise_id=49, weight=80.5, volume=1368.5),
-    #     # 2023/5/30 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[19].id, exercise_id=11, weight=120, volume=2280),
-    #     # 2023/6/2 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[20].id, exercise_id=11, weight=105, volume=3045),
-    #     # 2023/6/2 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[20].id, exercise_id=49, weight=73.5, volume=2058),
-    #     # 2023/6/20 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[21].id, exercise_id=49, weight=80.5, volume=1610),
-    #     # 2023/6/23 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[22].id, exercise_id=49, weight=73.5, volume=1911),
-    #     # 2023/7/4 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[23].id, exercise_id=49, weight=80.5, volume=1529.5),
-    #     # 2023/7/4 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[23].id, exercise_id=11, weight=120, volume=1200),
-    #     # 2023/7/10 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[24].id, exercise_id=53, weight=57, volume=1767),
-    #     # 2023/7/10 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[24].id, exercise_id=49, weight=73.5, volume=2058),
-    #     # 2023/7/21 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[25].id, exercise_id=11, weight=120, volume=2160),
-    #     # 2023/7/21 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[25].id, exercise_id=49, weight=80.5, volume=1529.5),
-    #     # 2023/7/24 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[26].id, exercise_id=53, weight=57, volume=1710),
-    #     # 2023/7/24 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[26].id, exercise_id=49, weight=73.5, volume=1984.5),
-    #     # 2023/7/24 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[26].id, exercise_id=11, weight=105, volume=2625),
-    #     # 2023/8/4 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[27].id, exercise_id=11, weight=120, volume=2160),
-    #     # 2023/8/4 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[27].id, exercise_id=49, weight=80.5, volume=1690.5),
-    #     # 2023/8/9 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[28].id, exercise_id=53, weight=57, volume=1482),
-    #     # 2023/8/9 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[28].id, exercise_id=49, weight=73.5, volume=1911),
-    #     # 2023/8/22 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[29].id, exercise_id=49, weight=80.5, volume=1529.5),
-    #     # 2023/8/25 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[30].id, exercise_id=53, weight=55, volume=1705),
-    #     # 2023/8/25 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[30].id, exercise_id=11, weight=105, volume=2940),
-    #     # 2023/9/11 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[31].id, exercise_id=49, weight=80.5, volume=1449),
-    #     # 2023/9/11 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[31].id, exercise_id=11, weight=120, volume=2040),
-    #     # 2023/9/14 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[32].id, exercise_id=49, weight=73.5, volume=1984.5),
-    #     # 2023/9/14 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[32].id, exercise_id=53, weight=57, volume=1596),
-    #     # 2023/9/26 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[33].id, exercise_id=49, weight=80.5, volume=1449),
-    #     # 2023/9/28 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[34].id, exercise_id=49, weight=73.5, volume=1984.5),
-    #     # 2023/9/28 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[34].id, exercise_id=53, weight=57, volume=1596),
-    #     # 2023/9/28 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[34].id, exercise_id=11, weight=105, volume=3255),
-    #     # 2023/10/13 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[35].id, exercise_id=49, weight=80.5, volume=1771),
-    #     # 2023/10/19 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[36].id, exercise_id=53, weight=57, volume=1653),
-    #     # 2023/10/19 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[36].id, exercise_id=49, weight=73.5, volume=2205),
-    #     # 2023/10/19 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[36].id, exercise_id=11, weight=105, volume=3360),
-    #     # 2023/10/29 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[37].id, exercise_id=49, weight=80.5, volume=1851.5),
-    #     # 2023/10/29 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[37].id, exercise_id=53, weight=47, volume=1410),
-    #     # 2023/11/3 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[38].id, exercise_id=11, weight=105, volume=3465),
-    #     # 2023/11/3 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[38].id, exercise_id=53, weight=57, volume=1767),
-    #     # 2023/11/3 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[38].id, exercise_id=49, weight=73.5, volume=2278.5),
-    #     # 2023/11/14 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[39].id, exercise_id=49, weight=80.5, volume=1851.5),
-    #     # 2023/11/17 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[40].id, exercise_id=53, weight=57, volume=1881),
-    #     # 2023/11/17 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[40].id, exercise_id=49, weight=73.5, volume=2352),
-    #     # 2023/11/28 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[41].id, exercise_id=11, weight=120, volume=2520),
-    #     # 2023/11/28 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[41].id, exercise_id=49, weight=80.5, volume=1851.5),
-    #     # 2023/12/2 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[42].id, exercise_id=53, weight=57, volume=1995),
-    #     # 2023/12/2 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[42].id, exercise_id=49, weight=73.5, volume=2352),
-    #     # 2023/12/9 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[43].id, exercise_id=11, weight=120, volume=2400),
-    #     # 2023/12/16 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[44].id, exercise_id=53, weight=57, volume=1995),
-    #     # 2023/12/16 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[44].id, exercise_id=49, weight=73.5, volume=2499),
-    #     # 2023/12/16 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[44].id, exercise_id=11, weight=105, volume=3255),
-    #     # 2024/1/7 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[45].id, exercise_id=49, weight=80.5, volume=1932),
-    #     # 2024/1/14 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[46].id, exercise_id=53, weight=62, volume=1674),
-    #     # 2024/1/14 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[46].id, exercise_id=49, weight=73.5, volume=2131.5),
-    #     # 2024/2/4 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[47].id, exercise_id=49, weight=80.5, volume=1771),
-    #     # 2024/2/10 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[48].id, exercise_id=11, weight=105, volume=3780),
-    #     # 2024/2/10 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[48].id, exercise_id=53, weight=62, volume=1736),
-    #     # 2024/2/10 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[48].id, exercise_id=49, weight=73.5, volume=2352),
-    #     # 2024/2/29 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[49].id, exercise_id=11, weight=120, volume=2760),
-    #     # 2024/2/29 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[49].id, exercise_id=49, weight=80.5, volume=1932),
-    #     # 2024/3/3 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[50].id, exercise_id=11, weight=110, volume=3190),
-    #     # 2024/3/3 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[50].id, exercise_id=49, weight=73.5, volume=2205),
-    #     # 2024/3/23 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[51].id, exercise_id=49, weight=83, volume=1826),
-    #     # 2024/3/23 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[51].id, exercise_id=11, weight=125, volume=1625),
-    #     # 2024/4/6 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[52].id, exercise_id=49, weight=73.5, volume=2278.5),
-    #     # 2024/4/6 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[52].id, exercise_id=11, weight=110, volume=2200),
-    #     # 2024/5/5 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[53].id, exercise_id=49, weight=83, volume=1743),
-    #     # 2024/5/12 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[54].id, exercise_id=49, weight=73.5, volume=2131.5),
-    #     # 2024/6/2 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[55].id, exercise_id=49, weight=83, volume=1826),
-    #     # 2024/6/9 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[56].id, exercise_id=11, weight=110, volume=3410),
-    #     # 2024/6/9 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[56].id, exercise_id=49, weight=73.5, volume=1837.5),
-    #     # 2024/6/29 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[57].id, exercise_id=49, weight=83, volume=1660),
-    #     # 2024/6/29 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[57].id, exercise_id=11, weight=125, volume=2125),
-    #     # 2024/7/7 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[58].id, exercise_id=49, weight=73.5, volume=2131.5),
-    #     # 2024/8/4 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[59].id, exercise_id=53, weight=62, volume=1488),
-    #     # 2024/8/4 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[59].id, exercise_id=49, weight=84, volume=1680),
-    #     # 2024/8/14 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[60].id, exercise_id=49, weight=73.5, volume=1911),
-    #     # 2024/8/30 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[61].id, exercise_id=49, weight=84, volume=1764),
-    #     # 2024/9/8 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[62].id, exercise_id=49, weight=73.5, volume=2131.5),
-    #     # 2024/9/30 バーベルスクワット
-    #     TrainingRecordDetail(record_id=record[63].id, exercise_id=11, weight=125, volume=1750),
-    #     # 2024/10/6 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[64].id, exercise_id=49, weight=73.5, volume=2278.5),
-    #     # 2024/11/2 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[65].id, exercise_id=53, weight=65, volume=1560),
-    #     # 2024/11/17 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[66].id, exercise_id=49, weight=73.5, volume=2131.5),
-    #     # 2024/12/28 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[67].id, exercise_id=49, weight=84, volume=1428),
-    #     # 2025/2/14 マシンベンチプレス
-    #     TrainingRecordDetail(record_id=record[68].id, exercise_id=49, weight=84, volume=1848),
-    #     # 2025/2/14 ラットプルダウン
-    #     TrainingRecordDetail(record_id=record[68].id, exercise_id=53, weight=62, volume=1426),
-        
-    # ]
-
     # レコード詳細
     record_detail = [
         # 2023/1/11 マシンベンチプレス
@@ -662,7 +407,33 @@ with app.app_context():
 
 
     db.session.add_all(record_detail)
-    db.session.commit()         
+    db.session.commit() 
+
+    # テンプレート
+    template=[
+        Template(user_id=user1.id,name='全身トレーニング_ハイレップ'),
+        Template(user_id=user1.id,name='全身トレーニング_ローレップ')
+    ]
+
+    db.session.add_all(template)
+    db.session.commit() 
+
+    # テンプレート詳細
+    template_detail=[
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[48], weight=52, goal_reps=16, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[44], weight=66, goal_reps=15, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[56], weight=62, goal_reps=15, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[7], weight=100, goal_reps=15, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[20], weight=39, goal_reps=15, goal_sets=3),
+
+        TemplateDetail(template_id=template[1].id, exercise_id=exercises[48], weight=72, goal_reps=6, goal_sets=5),
+        TemplateDetail(template_id=template[1].id, exercise_id=exercises[44], weight=91, goal_reps=6, goal_sets=5),
+        TemplateDetail(template_id=template[1].id, exercise_id=exercises[56], weight=95, goal_reps=6, goal_sets=4)
+    ]
+
+    db.session.add_all(template_detail)
+    db.session.commit() 
+  
 
 
     #ユーザ作成
