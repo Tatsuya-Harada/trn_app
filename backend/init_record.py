@@ -419,14 +419,14 @@ with app.app_context():
 
     # テンプレート詳細
     template_detail=[
-        TemplateDetail(template_id=template[0].id, exercise_id=exercises[48], weight=52, goal_reps=16, goal_sets=3),
-        TemplateDetail(template_id=template[0].id, exercise_id=exercises[44], weight=66, goal_reps=15, goal_sets=3),
-        TemplateDetail(template_id=template[0].id, exercise_id=exercises[56], weight=62, goal_reps=15, goal_sets=3),
-        TemplateDetail(template_id=template[0].id, exercise_id=exercises[7], weight=100, goal_reps=15, goal_sets=3),
-        TemplateDetail(template_id=template[0].id, exercise_id=exercises[20], weight=39, goal_reps=15, goal_sets=3),
-        TemplateDetail(template_id=template[1].id, exercise_id=exercises[48], weight=72, goal_reps=6, goal_sets=5),
-        TemplateDetail(template_id=template[1].id, exercise_id=exercises[44], weight=91, goal_reps=6, goal_sets=5),
-        TemplateDetail(template_id=template[1].id, exercise_id=exercises[56], weight=95, goal_reps=6, goal_sets=4)
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[48].id, weight=52, goal_reps=16, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[44].id, weight=66, goal_reps=15, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[56].id, weight=62, goal_reps=15, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[7].id, weight=100, goal_reps=15, goal_sets=3),
+        TemplateDetail(template_id=template[0].id, exercise_id=exercises[20].id, weight=39, goal_reps=15, goal_sets=3),
+        TemplateDetail(template_id=template[1].id, exercise_id=exercises[48].id, weight=72, goal_reps=6, goal_sets=5),
+        TemplateDetail(template_id=template[1].id, exercise_id=exercises[44].id, weight=91, goal_reps=6, goal_sets=5),
+        TemplateDetail(template_id=template[1].id, exercise_id=exercises[56].id, weight=95, goal_reps=6, goal_sets=4)
     ]
 
     db.session.add_all(template_detail)
