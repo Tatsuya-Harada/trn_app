@@ -6,10 +6,11 @@ const mainStore = useMainStore();
 const route = useRoute(); // ログイン画面での表示制御に使用するため現在のルート情報を取得
 const router = useRouter();
 const hideLinksOnRoutes = ['Login', 'Register'];
+const apiUrl = import.meta.env.VITE_API_URL; 
 
 // ログアウト
 const logout = async () => {
-  const response = await fetch('http://127.0.0.1:5000/api/logout', {
+  const response = await fetch('${apiUrl}/logout', {
     method: 'POST',
     credentials: 'include', 
   });

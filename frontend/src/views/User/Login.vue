@@ -4,6 +4,7 @@ import { RouterLink,useRouter } from 'vue-router';
 import type { UserInformation } from '../../types';
 
 const router = useRouter();
+const apiUrl = import.meta.env.VITE_API_URL; 
 
 // ログイン情報入力用のテンプレート変数
 const form = ref<UserInformation>({
@@ -13,7 +14,7 @@ const form = ref<UserInformation>({
 
 // ログイン情報を送信する非同期関数
 const submitRecord = async () => {
-  const response = await fetch('http://127.0.0.1:5000/api/login', {
+  const response = await fetch('${apiUrl}/login', {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },

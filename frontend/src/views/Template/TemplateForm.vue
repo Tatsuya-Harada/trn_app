@@ -10,6 +10,7 @@ const mainStore = useMainStore();
 
 const isEditing = route.query.isEditing;//テンプレートからのクエリ
 const templateId = route.query.templateId;
+const apiUrl = import.meta.env.VITE_API_URL; 
 
 // TRNテンプレート新規追加用のテンプレート変数
 let tempIdCounter = 1;
@@ -74,7 +75,7 @@ const addExercise = () => {
 // TRNテンプレート保存
 const submitRecord = async () => {
 
-  const response = await fetch('http://127.0.0.1:5000/api/template', {
+  const response = await fetch('${apiUrl}/template', {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
@@ -104,7 +105,7 @@ const submitRecord = async () => {
 //更新したTRNテンプレートを送信
 const changeRecord = async (template_id:number) => {
 
-  const url = new URL('http://127.0.0.1:5000/api/template');
+  const url = new URL('${apiUrl}/template');
   if (template_id) {
     url.searchParams.append('template_id', String(template_id)); //idは文字列として扱われるためBEで数値に戻す
   }
@@ -140,7 +141,7 @@ const changeRecord = async (template_id:number) => {
 const deleteDetail = async (temp_id:number,id:number) => {
   //更新の場合でDBにデータが存在する場合はDB上のデータも削除
   if (isEditing && id) {
-    const url = new URL('http://127.0.0.1:5000/api/template/detail');
+    const url = new URL('${apiUrl}/template/detail');
     url.searchParams.append('detail_id', String(id));
 
     await fetch(url.toString(), {

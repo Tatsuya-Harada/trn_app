@@ -4,12 +4,13 @@ import { RouterLink } from "vue-router";
 import { useMainStore } from '@/stores/main';
 
 const mainStore = useMainStore();
+const apiUrl = import.meta.env.VITE_API_URL; 
 
 
 
 // テンプレート一覧取得
 const fetchTemplate = async () => {    
-  const response = await fetch('http://127.0.0.1:5000/api/template',{
+  const response = await fetch('${apiUrl}/template',{
     credentials: 'include',
   });
 
@@ -23,7 +24,7 @@ const fetchTemplate = async () => {
 //TRNテンプレート削除
 const deleteRecord = async (template_id:number) => {
 
-  const url = new URL('http://127.0.0.1:5000/api/template');
+  const url = new URL('${apiUrl}/template');
 
   if (template_id) {
     url.searchParams.append('template_id', String(template_id));

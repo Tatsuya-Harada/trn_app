@@ -9,6 +9,7 @@ const mainStore = useMainStore();
 
 const fromTemplate = route.query.fromTemplate;//テンプレートからのクエリ
 const templateId = route.query.templateId; //テンプレートからのクエリ。クエリで受け取ると文字列型となる
+const apiUrl = import.meta.env.VITE_API_URL; 
 let tempIdCounter = 1; // 暫定記録ID用変数
 
 // トレーニング記録用のテンプレート変数
@@ -99,7 +100,7 @@ const submitRecord = async () => {
     detail.volume = calculateVolume(detail);
   });
 
-  const response = await fetch('http://127.0.0.1:5000/api/records', {
+  const response = await fetch('${apiUrl}/records', {
     method: 'POST',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },

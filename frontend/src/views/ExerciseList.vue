@@ -3,12 +3,13 @@ import { ref,onMounted } from 'vue';
 import { useMainStore } from '@/stores/main';
 
 const mainStore = useMainStore();
+const apiUrl = import.meta.env.VITE_API_URL; 
 const showModal = ref(false); // モーダルの表示状態を管理する変数
 
 //種目削除
 const deleteRecord = async (exercise_id:number) => {
 
-    const url = new URL('http://127.0.0.1:5000/api/exercise');
+    const url = new URL('${apiUrl}/exercise');
     if (exercise_id) {
       url.searchParams.append('exercise_id', String(exercise_id));
     }

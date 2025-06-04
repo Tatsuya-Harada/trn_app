@@ -217,7 +217,7 @@ def get_records():
     #配列と辞書構造で網羅されたリレーショナルデータ
     data.append(record_data)
   
-  print('data:{}'.format(data))
+  # print('data:{}'.format(data))
   return jsonify(data)
 
 # グラフ表示設定の保存
