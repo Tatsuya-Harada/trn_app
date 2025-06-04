@@ -13,11 +13,12 @@ export const useMainStore = defineStore('main', () => {
   const templates = ref<Template[]>([]); 
   const userInformation = ref<UserInformation>({user_id:0,user_name:'',});
 
+  const apiUrl = import.meta.env.VITE_API_URL; 
   //actionsに当たる部分
   //stateに加工処理をしたgettersを設定したい場合はオプション型同様computedプロパティで定義する
   // 種目一覧取得
   const fetchExercise = async () => {
-    const response = await fetch('http://127.0.0.1:5000/api/exercise',{
+    const response = await fetch(`${apiUrl}/exercise`,{
       credentials: 'include',
     });
     if (!response.ok) {
@@ -28,7 +29,7 @@ export const useMainStore = defineStore('main', () => {
 
   // 新規種目追加
   const submitExercise = async () => {
-    const response = await fetch('http://127.0.0.1:5000/api/exercise', {
+    const response = await fetch(`${apiUrl}/exercise`, {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -51,7 +52,7 @@ export const useMainStore = defineStore('main', () => {
 
   // ログインしているかの確認、ログインユーザー情報の取得
   const fetchLoginUser = async () => {
-    const response = await fetch('http://127.0.0.1:5000/api/me',{
+    const response = await fetch(`${apiUrl}/me`,{
       credentials: 'include',
     });
 
