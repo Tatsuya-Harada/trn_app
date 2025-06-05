@@ -181,7 +181,7 @@ const saveSettings = async () => {
   //   { exercise_id: 3, order: 2 },
   // ];
 
-  const response = await fetch('http://127.0.0.1:5000/api/graph-settings', {
+  const response = await fetch(`${apiUrl}/graph-settings`, {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -204,7 +204,7 @@ const saveSettings = async () => {
 
 // グラフ設定の取得
 const fetchGraphSettings = async () => {
-    const response = await fetch('http://127.0.0.1:5000/api/graph-settings', {
+    const response = await fetch(`${apiUrl}/graph-settings`, {
       method: 'GET',
       credentials: 'include',
     });
@@ -240,7 +240,7 @@ const fetchGraphSettings = async () => {
 const deleteGraphSettings = async (chart_temp_id:number, setting_id:number) => {
     //更新の場合でDBにデータが存在する場合はDB上のデータも削除
     if ( setting_id) {
-        const url = new URL('http://127.0.0.1:5000/api/graph-settings');
+        const url = new URL(`${apiUrl}/graph-settings`);
         url.searchParams.append('setting_id', String(setting_id));
 
         await fetch(url.toString(), {
