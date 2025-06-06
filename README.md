@@ -21,6 +21,7 @@
 - フロントエンド
   - Typescript
   - Vue.js
+  - Bootstrap
 - バックエンド
   - Python
   - Flask
