@@ -437,6 +437,9 @@ with app.app_context():
         UserGraphSetting(user_id=user1.id,exercise_id=exercises[7],order=1),
         UserGraphSetting(user_id=user1.id,exercise_id=exercises[48],order=1)
     ]
+
+    db.session.add_all(graph_setting)
+    db.session.commit() 
   
 
 
