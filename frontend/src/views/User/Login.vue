@@ -8,8 +8,8 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 // ログイン情報入力用のテンプレート変数
 const form = ref<UserInformation>({
-    user_name:'',
-    password: '',
+    user_name:'Sample',
+    password: '100',
 })
 
 // ログイン情報を送信する非同期関数

@@ -1,4 +1,4 @@
-from app import app,db,TrainingRecord,TrainingRecordDetail,SetReps,Exercise,Template,TemplateDetail,User
+from app import app,db,TrainingRecord,TrainingRecordDetail,SetReps,Exercise,Template,TemplateDetail,User,UserGraphSetting
 from datetime import date
 from werkzeug.security import generate_password_hash
 
@@ -431,6 +431,12 @@ with app.app_context():
 
     db.session.add_all(template_detail)
     db.session.commit() 
+
+    # 表示グラフ設定
+    graph_setting=[
+        UserGraphSetting(user_id=user1.id,exercise_id=exercises[7],order=1),
+        UserGraphSetting(user_id=user1.id,exercise_id=exercises[48],order=1)
+    ]
   
 
 
