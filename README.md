@@ -7,13 +7,13 @@
 
 
 # 使用技術
-Typescript
-Vue.js
-Python
-Flask
-SQLite
-SQLAlchemy
-Render
+- Typescript
+- Vue.js
+- Python
+- Flask
+- SQLite
+- SQLAlchemy
+- Render
 
 
 # 機能
