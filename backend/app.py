@@ -27,7 +27,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY']='mysecretkey'
 # Vue + Flask のような異なるポート間（localhost:5173 → localhost:5000）の通信はクロスサイト（クロスオリジン）
 # 通信に分類されるため、そのような場合にセッションを使った認証を行うには以下の設定が必要
-app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 app.config['SESSION_COOKIE_SECURE'] = False
 
 db = SQLAlchemy(app)
