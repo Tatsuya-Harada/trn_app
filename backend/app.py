@@ -12,7 +12,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 # ログイン機能追加に伴いcookieをフロントから送るにあたりCORS制約回避のためにsupports_credentialsを追加
 #AWS上に構築するに伴いフロントのオリジン：http://13.55.24.38からの通信を許可
-CORS(app, supports_credentials=True,rigins=["http://13.55.24.38"])
+CORS(app, supports_credentials=True,origins=["http://13.55.24.38"])
 
 # SQLiteデータベースの設定、ログインユーザのセッション管理を有効にするためにシークレットキーを設定
 basedir = os.path.abspath(os.path.dirname(__file__))
